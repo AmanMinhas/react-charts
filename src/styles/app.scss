@@ -1,0 +1,24 @@
+@import './variables';
+
+html, body {
+	font-size: 13px;
+	/*font-size: 16px;*/
+	color: $default-font-color;
+}
+
+a {
+	text-decoration: none;
+	color: $default-font-color
+}
+
+.app-navbar-nav-ul {
+    padding: 1rem 1rem 0 1rem;
+
+    .nav-item {
+    	font-size: 1.3rem;
+    	font-weight: bold;
+    	padding: 0rem 0.6rem 1rem;
+    }
+}
+
+/* 1.23rem = 16px */
