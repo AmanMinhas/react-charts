@@ -2,6 +2,27 @@ import React, { Component } from 'react';
 
 export default class Navbar extends Component {
 
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			activeTab: 'Dashboard',
+			leftNavList: [
+				{ title: 'Dashboard' },
+				{ title: 'Edit Time' },
+				{ title: 'Screenshots' },
+				{ title: 'Reports' },
+				{ title: 'Payments' }
+			]
+		};
+
+		this.changeActiveTab = this.changeActiveTab.bind(this);
+	}
+
+	changeActiveTab(activeTab) {
+		this.setState({ activeTab });
+	}
+
 	render() {
 		return (
 			<div className='app-navbar'>
@@ -11,21 +32,15 @@ export default class Navbar extends Component {
 					</button>
 					<div className="collapse navbar-collapse" id="navbarNav">
 						<ul className="navbar-nav app-navbar-nav-ul">
-							<li className="nav-item active">
-								<a className="nav-link" href="#">Dashboard <span className="sr-only">(current)</span></a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="#">Edit Time</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="#">Screenshots</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="#">Reports</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="#">Payments</a>
-							</li>
+							{ 	this.state.leftNavList.map((tab, key) => {
+									const className = 'nav-item '.concat(tab.title === this.state.activeTab ? 'active' : '');
+									return (
+										<li className={className} key={key} onClick={() => this.changeActiveTab(tab.title)}>
+											<a className="nav-link">{tab.title}</a>
+										</li>
+									);
+								}) 
+							}
 						</ul>
 					</div>
 				</nav>
