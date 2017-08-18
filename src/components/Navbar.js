@@ -26,7 +26,7 @@ export default class Navbar extends Component {
 	render() {
 		return (
 			<div className='app-navbar'>
-				<nav className="navbar navbar-toggleable-md bg-white app-navbar-nav">
+				<nav className="navbar navbar-toggleable-md bg-white navbar-light app-navbar-nav">
 					<button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
 					</button>

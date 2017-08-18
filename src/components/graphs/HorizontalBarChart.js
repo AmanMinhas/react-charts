@@ -14,7 +14,7 @@ export default class HorizontalBarChart extends Component {
 
 		return (
 			<div className="row ml-0 mr-0 horizontal-bar-chart">
-				<div className="col p-0">
+				<div className="col p-0 horizontal-bar-chart-col">
 					{userData.map((user, key) => {
 						const barFillWidth = barFullWidth*(user.uv/100);
 						return (
